@@ -12,6 +12,19 @@ function exec(args) {
     return args.user ? new List(args) : console.error('Invalid Argument');
 }
 
-exec(options).then(result => {
+options.valid() ? init() : help()
+
+
+function init() {
+    exec(options)
+    .then(result => {
     write(options, result);
-})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+function help() {
+    console.log('help!');
+}
