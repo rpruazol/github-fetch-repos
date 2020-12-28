@@ -26,5 +26,17 @@ function init() {
 }
 
 function help() {
-    console.log('help!');
+    console.log(
+        `
+        'github-fetch-repo-list' - Generate a text file of your Github repositories.  Includes private and forked repos!
+
+        usage: node index.js [-t <token>] [-u username>] [-f <file>]
+
+        mandatory arguments:
+
+            -t <token>:  your personal access token (PAC) GitHub
+            -u <user>:  your GitHub username
+            -f <file>:  the name of the output file that will be created
+        `
+        );
 }
