@@ -1,10 +1,19 @@
-# github-fetch-repo
+# Github Fetch 
 
+Github Fetch is a CLI (command line interface) tool written in NodeJS that will generate a list of your repositories, and output them to a file of your choice. 
 
-github-fetch-repos
+## Installation
 
-issue - two seperate api calls, one for private repos and one for forked repos.  one call can't do both?
+To get started, clone down the repo and install the dependencies via `npm install`.
 
-issue - constructor that returns the array of the repos was returning a promise<pending>.  had to do a '.then' when calling it in index.js to get the actual array back
+### Prerequisites
 
-issue - write.js was writing [object Object] to a file.  needed to loop through the array using forEach and target the propery in the object to write
+NodeJS framework - https://nodejs.org/en/download/
+
+## Usage
+
+Github Fetch is a command line tool that takes in 3 arguments (required):  
+
+    1. Your Github username
+    2. Your personal access token (PAT)
+    3. The filename that will be created for the output
