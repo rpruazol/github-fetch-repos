@@ -1,20 +1,24 @@
 'use strict';
 
 jest.mock('minimist');
-
-const uuid = require('uuid');
 const minimist = require('minimist');
 
-const app = require('../lib/input.js');
 
-describe('code', () => {
-    it('can understand a command line input', () => {
-        minimist.mockImplementation(() => {
-            return {
-                add: 'go'
-            }
-        })
-        let input = app.getToken();
-        expect(input.add).toEqual('go');
+
+minimist.mockImplementation(() => {
+    return {
+        t: '1234567890123456789012345678901234567890',
+        u: 'sup',
+        f: 'mills.txt'
+    }
+})
+
+const Input = require('../lib/input.js');
+
+describe('Input', () => {
+
+    it('valid token length', () => {
+        let options = new Input();
+        expect(options.token.length).toEqual(40);
     })
 })
